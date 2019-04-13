@@ -8,6 +8,10 @@ class Bank_Date(datetime):
     to the datetime class, like adding months to the date or calculating
     the difference between two dates in months    
     """
+    @property
+    def nanosecond(self):
+        return 0
+
     def is_end_of_month(self):
         """ returns true, if the current day is the end of month """
         return monthrange(self.year, self.month)[1] == self.day
